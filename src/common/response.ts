@@ -12,8 +12,3 @@ export type LumiResponse<T> =
       data: null;
       error: ErrorResponse;
     };
-
-/**
- * Alias de retrocompatibilidade
- */
-export type MailificaResponse<T> = LumiResponse<T>;

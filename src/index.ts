@@ -1,6 +1,6 @@
-import { Lumi, lumi, Mailifica, mailifica } from './lumi';
+import { Lumi, lumi } from './lumi';
 
-export { Lumi, lumi, Mailifica, mailifica };
+export { Lumi, lumi };
 export default Lumi;
 
 // Interfaces & Tipos

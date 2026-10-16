@@ -30,10 +30,4 @@ export class Lumi {
  */
 export const lumi = Lumi;
 
-/**
- * Aliases de retrocompatibilidade com Mailifica
- */
-export const Mailifica = Lumi;
-export const mailifica = Lumi;
-
 export default Lumi;

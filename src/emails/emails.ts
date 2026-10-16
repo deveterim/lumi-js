@@ -1,5 +1,5 @@
 import { HttpClient } from '../common/client';
-import { MailificaResponse } from '../common/response';
+import { LumiResponse } from '../common/response';
 import { renderReactEmail } from '../render';
 import { CreateEmailOptions, CreateEmailResponse } from './interfaces/create-email';
 import { GetEmailResponse } from './interfaces/get-email';
@@ -10,7 +10,7 @@ export class Emails {
   /**
    * Dispara um e-mail transacional
    */
-  async send(payload: CreateEmailOptions): Promise<MailificaResponse<CreateEmailResponse>> {
+  async send(payload: CreateEmailOptions): Promise<LumiResponse<CreateEmailResponse>> {
     const to = Array.isArray(payload.to)
       ? (payload.to.length === 1 ? payload.to[0] : payload.to)
       : payload.to;
@@ -41,14 +41,14 @@ export class Emails {
   /**
    * Alias de conveniência idêntico a `send()`
    */
-  async create(payload: CreateEmailOptions): Promise<MailificaResponse<CreateEmailResponse>> {
+  async create(payload: CreateEmailOptions): Promise<LumiResponse<CreateEmailResponse>> {
     return this.send(payload);
   }
 
   /**
    * Consulta os detalhes e status de entrega de um e-mail enviado
    */
-  async get(id: string): Promise<MailificaResponse<GetEmailResponse>> {
+  async get(id: string): Promise<LumiResponse<GetEmailResponse>> {
     return this.client.get<GetEmailResponse>(`/emails/${id}`);
   }
 }

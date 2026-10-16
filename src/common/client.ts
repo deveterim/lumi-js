@@ -14,13 +14,13 @@ export class HttpClient {
     this.apiKey =
       apiKey ||
       (typeof process !== 'undefined'
-        ? process.env.LUMI_API_KEY || process.env.MAILIFICA_API_KEY || ''
+        ? process.env.LUMI_API_KEY || process.env.LUMI_API_KEY || ''
         : '');
 
     this.baseUrl = (
       options.baseUrl ||
       (typeof process !== 'undefined'
-        ? process.env.LUMI_BASE_URL || process.env.MAILIFICA_BASE_URL
+        ? process.env.LUMI_BASE_URL || process.env.LUMI_BASE_URL
         : undefined) ||
       'https://api.lumi.email/v1'
     ).replace(/\/$/, '');

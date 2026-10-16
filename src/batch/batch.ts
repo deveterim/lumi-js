@@ -1,5 +1,5 @@
 import { HttpClient } from '../common/client';
-import { MailificaResponse } from '../common/response';
+import { LumiResponse } from '../common/response';
 import { CreateEmailOptions, CreateEmailResponse } from '../emails/interfaces/create-email';
 import { renderReactEmail } from '../render';
 
@@ -13,7 +13,7 @@ export class Batch {
   /**
    * Envia até 50 e-mails numa única requisição de lote (Batch)
    */
-  async send(emails: CreateEmailOptions[]): Promise<MailificaResponse<BatchSendResponse>> {
+  async send(emails: CreateEmailOptions[]): Promise<LumiResponse<BatchSendResponse>> {
     const processed = await Promise.all(
       emails.map(async (email) => {
         const to = Array.isArray(email.to) ? email.to[0] : email.to;
@@ -41,7 +41,7 @@ export class Batch {
     return this.client.post<BatchSendResponse>('/emails/batch', { emails: processed });
   }
 
-  async create(emails: CreateEmailOptions[]): Promise<MailificaResponse<BatchSendResponse>> {
+  async create(emails: CreateEmailOptions[]): Promise<LumiResponse<BatchSendResponse>> {
     return this.send(emails);
   }
 }

@@ -4,15 +4,15 @@ export interface ErrorResponse {
   statusCode?: number;
 }
 
-export class MailificaError extends Error {
+export class LumiError extends Error {
   readonly statusCode?: number;
   readonly type: string;
 
-  constructor(message: string, statusCode?: number, type = 'mailifica_error') {
+  constructor(message: string, statusCode?: number, type = 'lumi_error') {
     super(message);
-    this.name = 'MailificaError';
+    this.name = 'LumiError';
     this.statusCode = statusCode;
     this.type = type;
-    Object.setPrototypeOf(this, MailificaError.prototype);
+    Object.setPrototypeOf(this, LumiError.prototype);
   }
 }

@@ -9,7 +9,7 @@ export interface VerifySignatureOptions {
 
 export class Webhooks {
   /**
-   * Valida a assinatura HMAC SHA-256 do webhook enviado pela Mailifica
+   * Valida a assinatura HMAC SHA-256 do webhook enviado pela Lumi
    */
   verifySignature({ payload, signature, secret }: VerifySignatureOptions): boolean {
     if (!signature || !secret) return false;

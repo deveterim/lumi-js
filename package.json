@@ -51,7 +51,7 @@
   },
   "homepage": "https://lumi.email",
   "bugs": {
-    "url": "https://github.com/mailifica/mailifica-js/issues"
+    "url": "https://github.com/deveterim/lumi-email/issues"
   },
   "publishConfig": {
     "access": "public"
