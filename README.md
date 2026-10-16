@@ -49,7 +49,7 @@ Set your API Key via constructor or provide the `LUMI_API_KEY` environment varia
 ```typescript
 import { Lumi } from '@lumi/lumi-email';
 
-const lumi = new Lumi('ma_live_123456789abcdef');
+const lumi = new Lumi('lu_live_123456789abcdef');
 
 // Or automatically load from process.env.LUMI_API_KEY:
 // const lumi = new Lumi();
