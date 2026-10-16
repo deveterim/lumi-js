@@ -1,0 +1,67 @@
+{
+  "name": "lumi-email",
+  "version": "1.0.0",
+  "description": "Official Resend-like TypeScript & Node.js SDK for Lumi Email Platform",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "keywords": [
+    "lumi",
+    "lumi-email",
+    "email",
+    "transactional",
+    "resend",
+    "react-email",
+    "smtp",
+    "typescript",
+    "sdk"
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "author": "Lumi Email <dev@lumi.email> (https://lumi.email)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eadafonso/lumi.git"
+  },
+  "homepage": "https://lumi.email",
+  "bugs": {
+    "url": "https://github.com/mailifica/mailifica-js/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "@types/react": "^18.3.0",
+    "react": "^18.3.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
