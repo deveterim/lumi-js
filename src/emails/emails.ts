@@ -28,13 +28,26 @@ export class Emails {
 
     const { react: _, replyTo: __, ...cleanPayload } = payload as any;
 
-    return this.client.post<CreateEmailResponse>('/emails', {
+    return this.client.post<CreateEmailResponse>('/api/v1/send', {
       ...cleanPayload,
       to,
       cc,
       bcc,
       reply_to: replyTo,
       html,
+    }).then(async (res) => {
+      if (res.error && res.error.name !== 'network_error') {
+        // Fallback to /emails for resend-compatible backends
+        return this.client.post<CreateEmailResponse>('/emails', {
+          ...cleanPayload,
+          to,
+          cc,
+          bcc,
+          reply_to: replyTo,
+          html,
+        });
+      }
+      return res;
     });
   }
 

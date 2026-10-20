@@ -22,7 +22,7 @@ export class HttpClient {
       (typeof process !== 'undefined'
         ? process.env.LUMI_BASE_URL || process.env.LUMI_BASE_URL
         : undefined) ||
-      'https://api.lumi.email/v1'
+      'https://api.lumi.ao'
     ).replace(/\/$/, '');
 
     if (!this.apiKey) {
