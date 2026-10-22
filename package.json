@@ -47,11 +47,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eadafonso/lumi.git"
+    "url": "https://github.com/deveterim/lumi-js.git"
   },
   "homepage": "https://lumi.email",
   "bugs": {
-    "url": "https://github.com/deveterim/lumi-email/issues"
+    "url": "https://github.com/deveterim/lumi-js/issues"
   },
   "publishConfig": {
     "access": "public"

@@ -31,7 +31,7 @@ describe('Lumi JS SDK (Resend-like)', () => {
       expect(response.data).toEqual(mockResponse);
       expect(response.error).toBeNull();
       expect(global.fetch).toHaveBeenCalledWith(
-        'https://api.lumi.email/v1/emails',
+        'https://api.lumi.email/v1/api/v1/send',
         expect.objectContaining({
           method: 'POST',
           headers: expect.objectContaining({
